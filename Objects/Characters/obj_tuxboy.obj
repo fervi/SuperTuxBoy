@@ -1,6 +1,6 @@
 Events{4}
   Event (0,0): Actions{1}
-    Action (603,1): Code[24 lines]
+    Action (603,1): Code[21 lines]
 // Pieter's Code (GMClan)
 
 hsp = 0; // horizontal speed
@@ -22,9 +22,6 @@ maxHorSpeedshift = 24; // max horizontal speed Shift
 jumpSpeed = 12; // jump speed (higher you set it, higher the player goes)
 
 // Pieter's Code (GMClan) [End]
-
-//texture_set_interpolation(true)
-//window_set_size(1366,768);
   Event (0,3): Actions{1}
     Action (603,1): Code[136 lines]
 // Pieter's Code (GMClan)
