@@ -8,5 +8,7 @@ This is "experimental" test of enigma project (Enigma project is zipped)
 
 
 git clone git://github.com/fervi/SuperTuxBoy.git
+
 cd SuperTuxBoy
+
 zip -r -9 enigma.egm * 
