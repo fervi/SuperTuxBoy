@@ -1,0 +1,23 @@
+%e-yaml
+---
+Data: Enigma Settings.eef
+treat-literals-as: 0
+inherit-equivalence-from: 0
+make-directory: "%HOME%/.enigma/"
+scalar-precision: 0
+angular-unit: 0
+inherit-strings-from: 0
+inherit-negatives-as: 0
+inherit-escapes-from: 0
+inherit-objects: true
+inherit-increment-from: 1
+
+target-networking: None
+target-audio: OpenAL
+target-windowing: xlib
+target-compiler: gcc
+target-graphics: OpenGL1
+target-widget: None
+target-collision: Precise
+
+extensions: Universal_System/Extensions/Alarms,Universal_System/Extensions/Timelines,Universal_System/Extensions/Paths,Universal_System/Extensions/MotionPlanning,Universal_System/Extensions/DateTime,Universal_System/Extensions/ParticleSystems,Universal_System/Extensions/DataStructures

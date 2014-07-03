@@ -1,0 +1,5 @@
+spr_left_forest
+spr_mid_forest
+spr_right_forest
+spr_tile1_forest
+spr_tile2_forest

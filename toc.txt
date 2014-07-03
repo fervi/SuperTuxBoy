@@ -1,0 +1,16 @@
+SPR Sprites
+SND Sounds
+BKG Backgrounds
+PTH Paths
+SCR Scripts
+SHR Shaders
+FNT Fonts
+TML Timelines
+OBJ Objects
+RMM Rooms
+INC Includes
+EXT Extensions
+GMI Game Information
+GMS Game Settings
+PKG Extension Packages
+EGS Enigma Settings

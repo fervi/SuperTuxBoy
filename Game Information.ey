@@ -1,0 +1,12 @@
+Data: Game Information.rtf
+BACKGROUND_COLOR: 0xffffffe1
+EMBED_GAME_WINDOW: false
+FORM_CAPTION: 
+LEFT: -1
+TOP: -1
+WIDTH: 600
+HEIGHT: 400
+SHOW_BORDER: true
+ALLOW_RESIZE: true
+STAY_ON_TOP: false
+PAUSE_GAME: true

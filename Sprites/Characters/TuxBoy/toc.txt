@@ -1,0 +1,2 @@
+spr_tuxboy_stand
+spr_tuxboy_walk
