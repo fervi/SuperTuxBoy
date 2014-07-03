@@ -11,4 +11,4 @@ git clone git://github.com/fervi/SuperTuxBoy.git
 
 cd SuperTuxBoy
 
-zip -r -9 enigma.egm * 
+zip -r -9 supertuxboy.egm * 
