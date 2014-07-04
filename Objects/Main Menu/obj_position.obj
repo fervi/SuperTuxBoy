@@ -1,0 +1,41 @@
+Events{2}
+  Event (0,0): Actions{1}
+    Action (603,1): Code[1 lines]
+menu_pos=0;
+  Event (0,3): Actions{1}
+    Action (603,1): Code[35 lines]
+// Menu's moving
+if(keyboard_check_pressed(vk_down))
+{
+
+if(menu_pos!=5)
+{
+y=y+73;
+menu_pos=menu_pos+1;
+}
+}
+else if(keyboard_check_pressed(vk_up))
+{
+if(menu_pos!=0)
+{
+y=y-73;
+menu_pos=menu_pos-1;
+}
+}
+
+
+// Execute choosed option
+if(keyboard_check_pressed(vk_enter))
+{
+if (menu_pos=0)
+{
+room_goto(rm_level1);
+}
+if (menu_pos=5)
+{
+game_end();
+}
+
+
+
+}

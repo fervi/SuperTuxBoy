@@ -10,7 +10,7 @@ inherit-strings-from: 0
 inherit-negatives-as: 0
 inherit-escapes-from: 0
 inherit-objects: true
-inherit-increment-from: 1
+inherit-increment-from: 0
 
 target-networking: None
 target-audio: OpenAL
