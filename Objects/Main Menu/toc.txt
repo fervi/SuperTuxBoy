@@ -1,7 +1,2 @@
-obj_newgame
-obj_loadgame
-obj_options
-obj_credits
-obj_help
-obj_exit
+obj_button
 obj_position

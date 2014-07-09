@@ -1,5 +1,5 @@
 Data: obj_position.obj
-SPRITE: spr_position
+SPRITE: null
 SOLID: false
 VISIBLE: true
 DEPTH: 0

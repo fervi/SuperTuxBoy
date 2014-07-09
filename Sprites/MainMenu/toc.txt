@@ -1,7 +1,2 @@
-spr_newgame
-spr_loadgame
-spr_options
-spr_credits
-spr_help
-spr_exit
 spr_position
+spr_button

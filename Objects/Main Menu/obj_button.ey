@@ -1,5 +1,5 @@
-Data: obj_loadgame.obj
-SPRITE: spr_loadgame
+Data: obj_button.obj
+SPRITE: spr_button
 SOLID: false
 VISIBLE: true
 DEPTH: 0
