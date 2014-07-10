@@ -1,4 +1,4 @@
-Events{5}
+Events{6}
   Event (0,0): Actions{1}
     Action (603,1): Code[21 lines]
 // Pieter's Code (GMClan)
@@ -217,6 +217,9 @@ if(vspeed>0){
 move_contact_solid(270,vspeed);
 }
 vspeed=0;
+  Event (obj_saw_big,4): Actions{1}
+    Action (603,1): Code[1 lines]
+room_restart();
   Event (0,7): Actions{1}
     Action (603,1): Code[1 lines]
 room_restart();

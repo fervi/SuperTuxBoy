@@ -2,3 +2,4 @@ Characters
 Temp
 Controller
 Main Menu
+Traps
