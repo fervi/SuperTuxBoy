@@ -1,4 +1,4 @@
-Events{4}
+Events{5}
   Event (0,0): Actions{1}
     Action (603,1): Code[21 lines]
 // Pieter's Code (GMClan)
@@ -23,7 +23,7 @@ jumpSpeed = 12; // jump speed (higher you set it, higher the player goes)
 
 // Pieter's Code (GMClan) [End]
   Event (0,3): Actions{1}
-    Action (603,1): Code[136 lines]
+    Action (603,1): Code[182 lines]
 // Pieter's Code (GMClan)
 
 left_button = keyboard_check(vk_left);
@@ -160,11 +160,63 @@ x += hsp;
 y += vsp;
 
 // Pieter's Code (GMClan) [End]
+
+
+// Gravity Code
+/*if place_free(x+0,y+1)
+{
+gravity=0.5
+}
+else 
+{
+gravity=0
+}
+
+if(vspeed>8)
+{
+vspeed=8
+}
+
+
+if(keyboard_check(vk_right))
+{
+sprite_index=spr_tuxboy_walk
+image_xscale=1
+hspeed=8
+}
+else if(keyboard_check(vk_left))
+{
+sprite_index=spr_tuxboy_walk
+image_xscale=-1
+hspeed=-8
+}
+
+
+if(keyboard_check(vk_up))
+{
+sprite_index=spr_tuxboy_walk
+if !place_free(x,y+1)
+vspeed=-10;
+}
+
+
+
+if(keyboard_check(vk_nokey))
+{
+hspeed=0
+sprite_index=spr_tuxboy_stand
+}*/
   Event (obj_penny,4): Actions{1}
     Action (603,1): Code[3 lines]
 sound_play(snd_penny);
 sleep(1000);
 room_goto_next();
+  Event (obj_block,4): Actions{1}
+    Action (603,1): Code[4 lines]
+if(vspeed>0){
+move_contact_solid(270,vspeed);
+}
+vspeed=0;
   Event (0,7): Actions{1}
     Action (603,1): Code[1 lines]
 room_restart();
