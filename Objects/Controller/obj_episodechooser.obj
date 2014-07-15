@@ -1,0 +1,31 @@
+Events{3}
+  Event (0,0): Actions{1}
+    Action (603,1): Code[1 lines]
+epi_pos=1;
+  Event (0,3): Actions{1}
+    Action (603,1): Code[22 lines]
+if(keyboard_check_pressed(vk_right))
+{
+if(epi_pos!=5)
+{
+epi_pos=epi_pos+1
+}
+}
+if(keyboard_check_pressed(vk_left))
+{
+if(epi_pos!=1)
+{
+epi_pos=epi_pos-1
+}
+}
+
+if(keyboard_check_pressed(vk_enter))
+{
+if(epi_pos=1)
+{
+room_goto(rm_level1);
+}
+}
+  Event (0,8): Actions{1}
+    Action (603,1): Code[1 lines]
+draw_text(10,10,epi_pos);

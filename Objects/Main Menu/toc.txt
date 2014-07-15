@@ -1,2 +1,0 @@
-obj_button
-obj_position

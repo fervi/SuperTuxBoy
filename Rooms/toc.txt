@@ -1,3 +1,4 @@
 rm_menu
+rm_episodechooser
 Episode1
 Disabled
