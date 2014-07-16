@@ -1,0 +1,22 @@
+Events{2}
+  Event (0,3): Actions{1}
+    Action (603,1): Code[13 lines]
+if place_free(x+0,y+1)
+{
+gravity=0.5
+}
+else 
+{
+gravity=0
+}
+
+if(vspeed>8)
+{
+vspeed=8
+}
+  Event (obj_block,4): Actions{1}
+    Action (603,1): Code[4 lines]
+if(vspeed>0){
+move_contact_solid(270,vspeed);
+}
+vspeed=0;

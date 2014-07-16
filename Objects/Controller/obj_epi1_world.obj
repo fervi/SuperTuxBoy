@@ -1,0 +1,36 @@
+Events{3}
+  Event (0,0): Actions{1}
+    Action (603,1): Code[1 lines]
+wrld1_pos=1;
+  Event (0,3): Actions{1}
+    Action (603,1): Code[27 lines]
+if(keyboard_check_pressed(vk_right))
+{
+if(wrld1_pos!=25)
+{
+wrld1_pos=wrld1_pos+1
+}
+}
+if(keyboard_check_pressed(vk_left))
+{
+if(wrld1_pos!=1)
+{
+wrld1_pos=wrld1_pos-1
+}
+}
+
+if(keyboard_check_pressed(vk_enter)) //Hate switch-case, but short
+{
+switch(wrld1_pos)
+{
+case 1:
+room_goto(rm_level1);
+break;
+case 2:
+room_goto(rm_level2);
+brake;
+}
+}
+  Event (0,8): Actions{1}
+    Action (603,1): Code[1 lines]
+draw_text(10,10,wrld1_pos);

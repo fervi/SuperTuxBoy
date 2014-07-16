@@ -1,0 +1,225 @@
+Events{6}
+  Event (0,0): Actions{1}
+    Action (603,1): Code[21 lines]
+// Pieter's Code (GMClan)
+
+hsp = 0; // horizontal speed
+vsp = 0; // vertical speed
+grounded = 0; // is on ground
+
+sliding = 0;
+maxSlidingSpeed = 3;
+slidingJumpSpeed = 8;
+
+vgrav = 1; // verticalgravity
+hgrav = 0.5; // horizontal gravity
+hgravshift = 1.0; // horizontal gravity shifted
+fric = 1; // on ground friction
+counterFricMultiplier = 3; // friction when oposit buttons are pressed
+
+maxHorSpeed = 12; // max horizontal speed
+maxHorSpeedshift = 24; // max horizontal speed Shift
+jumpSpeed = 12; // jump speed (higher you set it, higher the player goes)
+
+// Pieter's Code (GMClan) [End]
+  Event (0,3): Actions{1}
+    Action (603,1): Code[182 lines]
+// Pieter's Code (GMClan)
+
+left_button = keyboard_check(vk_left);
+left_shift_button = keyboard_check(vk_left) && keyboard_check(vk_shift);
+right_button = keyboard_check(vk_right);
+right_shift_button = keyboard_check(vk_right) && keyboard_check(vk_shift);
+up_button = keyboard_check(vk_space);
+
+vsp += vgrav;
+if ( sliding == 1 ) {
+if ( vsp > maxSlidingSpeed ) {
+vsp = maxSlidingSpeed;
+}
+}
+
+// Fervi's Code
+if ( keyboard_check(vk_nokey=1))
+{
+sprite_index = spr_tuxboy_stand
+}
+// Fervi's Code End
+
+if ( left_button ) {
+image_xscale=-1
+sprite_index = spr_tuxboy_walk
+if ( hsp > 0 ) {
+hsp -= hgrav * counterFricMultiplier;
+} else {
+hsp -= hgrav;
+}
+if ( hsp < -maxHorSpeed ) hsp = -maxHorSpeed;
+}
+
+// Fervi's Code
+if ( left_shift_button ) {
+image_xscale=-1
+sprite_index = spr_tuxboy_walk
+if ( hsp > 0 ) {
+hsp -= hgravshift * counterFricMultiplier;
+} else {
+hsp -= hgravshift;
+}
+if ( hsp < -maxHorSpeedshift ) hsp = -maxHorSpeedshift;
+}
+// Fervi's Code End
+
+
+
+
+
+// Fervi's Code
+if ( right_shiftbutton ) {
+image_xscale=1
+sprite_index = spr_tuxboy_walk
+if ( hsp < 0 ) {
+hsp += hgravshift * counterFricMultiplier;
+} else {
+hsp += hgravshift;
+}
+if ( hsp > maxHorSpeedshift ) hsp = maxHorSpeedshift;
+}
+
+// Fervi's Code end
+
+if ( right_button ) {
+image_xscale=1
+sprite_index = spr_tuxboy_walk
+if ( hsp < 0 ) {
+hsp += hgrav * counterFricMultiplier;
+} else {
+hsp += hgrav;
+}
+
+if ( hsp > maxHorSpeed ) hsp = maxHorSpeed;
+}
+
+
+if ( up_button ) {
+if ( grounded == 1 ) vsp = -jumpSpeed;
+if ( sliding == 1 ) {
+if ( place_meeting(x+1, y, obj_block) ) {
+hsp -= slidingJumpSpeed;
+}
+if ( place_meeting(x-1, y, obj_block) ) {
+hsp += slidingJumpSpeed;
+}
+}
+}
+
+if ( !right_button && !left_button ) {
+if ( grounded == 1 ) {
+if ( hsp < 0 ) {
+if ( hsp < fric ) {
+hsp += fric;
+} else {
+hsp = 0;
+}
+}
+if ( hsp > 0 ) {
+if ( hsp > fric ) {
+hsp -= fric;
+} else {
+hsp = 0;
+}
+}
+}
+}
+
+// vertical collision
+if ( place_meeting(x, y+vsp, obj_block) ) {
+if ( vsp < 0 ) {
+while ( !place_meeting(x, y-1, obj_block ) ) y -= 1;
+vsp = 0;
+grounded = 0;
+} else {
+while ( !place_meeting(x, y+1, obj_block ) ) y += 1;
+vsp = 0;
+grounded = 1;
+}
+} else {
+grounded = 0;
+}
+
+// horizontal collision
+if ( place_meeting(x+hsp, y, obj_block) ) {
+while ( !place_meeting(x+sign(hsp), y, obj_block) ) x += sign( hsp );
+hsp = 0;
+}
+
+// sliding
+scr_sliding(obj_block)
+
+x += hsp;
+y += vsp;
+
+// Pieter's Code (GMClan) [End]
+
+
+// Gravity Code
+/*if place_free(x+0,y+1)
+{
+gravity=0.5
+}
+else 
+{
+gravity=0
+}
+
+if(vspeed>8)
+{
+vspeed=8
+}
+
+
+if(keyboard_check(vk_right))
+{
+sprite_index=spr_tuxboy_walk
+image_xscale=1
+hspeed=8
+}
+else if(keyboard_check(vk_left))
+{
+sprite_index=spr_tuxboy_walk
+image_xscale=-1
+hspeed=-8
+}
+
+
+if(keyboard_check(vk_up))
+{
+sprite_index=spr_tuxboy_walk
+if !place_free(x,y+1)
+vspeed=-10;
+}
+
+
+
+if(keyboard_check(vk_nokey))
+{
+hspeed=0
+sprite_index=spr_tuxboy_stand
+}*/
+  Event (obj_penny,4): Actions{1}
+    Action (603,1): Code[3 lines]
+sound_play(snd_penny);
+sleep(1000);
+room_goto_next();
+  Event (obj_block,4): Actions{1}
+    Action (603,1): Code[4 lines]
+if(vspeed>0){
+move_contact_solid(270,vspeed);
+}
+vspeed=0;
+  Event (obj_saw_big,4): Actions{1}
+    Action (603,1): Code[1 lines]
+room_restart();
+  Event (0,7): Actions{1}
+    Action (603,1): Code[1 lines]
+room_restart();

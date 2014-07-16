@@ -1,0 +1,5 @@
+obj_position
+obj_button
+obj_controller
+obj_episodechooser
+obj_epi1_world

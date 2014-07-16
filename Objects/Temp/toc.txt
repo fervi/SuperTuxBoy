@@ -1,0 +1,2 @@
+obj_block
+obj_endgame
