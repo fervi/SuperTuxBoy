@@ -1,6 +1,0 @@
-if ( place_meeting(x+1, y, argument0) || place_meeting(x-1, y, argument0) ) {
-grounded = 1;
-return sliding = 1;
-} else {
-return sliding = 0;
-}

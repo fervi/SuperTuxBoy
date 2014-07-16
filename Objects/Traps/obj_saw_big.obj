@@ -1,4 +1,0 @@
-Events{1}
-  Event (0,3): Actions{1}
-    Action (603,1): Code[1 lines]
-image_angle=image_angle+15;
